@@ -16,4 +16,4 @@ app.get('/metrics', async (_req, res) => {
     }
 });
 
-app.listen(4001, '0.0.0.0');
+app.listen(process.env.APP_PORT || 4001, '0.0.0.0');
