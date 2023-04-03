@@ -5,7 +5,7 @@ import { collectDefaultMetrics, register } from 'prom-client';
 dotenv.config()
 
 collectDefaultMetrics({
-    labels: { NODE_APP_INSTANCE: process.env.NODE_APP_INSTANCE },
+    labels: { nodename: process.env.NODE_NAME },
 });
 
 const app = express();
