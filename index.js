@@ -1,5 +1,8 @@
+import * as dotenv from 'dotenv'
 import express from 'express';
 import { collectDefaultMetrics, register } from 'prom-client';
+
+dotenv.config()
 
 collectDefaultMetrics({
     labels: { NODE_APP_INSTANCE: process.env.NODE_APP_INSTANCE },
