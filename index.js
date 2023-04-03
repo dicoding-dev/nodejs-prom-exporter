@@ -33,3 +33,4 @@ app.get('/metrics', async (_req, res) => {
 });
 
 app.listen(process.env.APP_PORT || 4001, '0.0.0.0');
+console.log('App running on port ' + process.env.APP_PORT || 4001);
