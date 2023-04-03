@@ -10,6 +10,19 @@ collectDefaultMetrics({
 
 const app = express();
 
+app.get('/', (req, res) => {
+    res.set('Content-Type', 'text/html');
+    res.send([
+        '<html>',
+        '<head><title>NodeJS Prom Exporter</title></head>',
+        '<body>',
+        '<h1>NodeJS Prom Exporter</h1>',
+        '<p><a href="/metrics">Metrics</a></p>',
+        '</body>',
+        '</html>'
+    ].join('\n'));
+})
+
 app.get('/metrics', async (_req, res) => {
     try {
         res.set('Content-Type', register.contentType);
